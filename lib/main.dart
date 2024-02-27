@@ -12,7 +12,9 @@ import 'domain/repositories/shared_preference_repository.dart';
 late final LocalRepository localRepository;
 
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
+
   final db = await LocalDataSourceImpl.init;
   LocalDataSource dataSource = LocalDataSourceImpl(db: db);
   localRepository = LocalRepositoryImpl(dataSource: dataSource);
